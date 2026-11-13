@@ -10,35 +10,49 @@ Prioritize correctness, maintainability, reliability, and simplicity.
 
 ## Task-specific instructions
 
-Additional task-specific instructions are stored in the `promts` directory relative to the directory containing this `AGENTS.md` file.
+Additional task-specific instructions are stored in the promts directory inside the global Codex home directory (CODEX_HOME), where this global AGENTS.md is located.
+
+The expected directory structure is:
+
+~/.codex/
+├── AGENTS.md
+└── promts/
+    ├── test
+    └── architecture
+
+All task-specific instruction paths must be resolved relative to the global Codex home directory, never relative to the current project root, repository root, or working directory.
 
 ### Testing tasks
 
 For tasks involving writing, modifying, reviewing, or debugging tests:
 
-1. Read `./promts/test` before starting the task.
-2. Apply the instructions from this file together with the general rules in `AGENTS.md`.
-3. Follow the testing conventions, mocking rules, assertion patterns, and code style defined in the testing instructions.
-4. Apply these instructions to unit, integration, and controller tests whenever relevant.
+1. Read $CODEX_HOME/promts/test before starting the task.
+2. If CODEX_HOME is not explicitly set, use ~/.codex/promts/test.
+3. Apply the instructions from this file together with the general rules in AGENTS.md.
+4. Follow the testing conventions, mocking rules, assertion patterns, and code style defined in the testing instructions.
+5. Apply these instructions to unit, integration, and controller tests whenever relevant.
 
 ### Architecture tasks
 
 For tasks involving architecture design, system design, integration design, technical research, or evaluation of implementation approaches:
 
-1. Read `./promts/architecture` before starting the analysis.
-2. Apply the instructions from this file together with the general rules in `AGENTS.md`.
-3. Follow its requirements for architectural analysis, alternative solutions, trade-offs, risks, and recommendations.
-4. Do not start implementation until the architectural analysis is complete when the task explicitly requires architecture review before implementation.
+1. Read $CODEX_HOME/promts/architecture before starting the analysis.
+2. If CODEX_HOME is not explicitly set, use ~/.codex/promts/architecture.
+3. Apply the instructions from this file together with the general rules in AGENTS.md.
+4. Follow its requirements for architectural analysis, alternative solutions, trade-offs, risks, and recommendations.
+5. Do not start implementation until the architectural analysis is complete when the task explicitly requires architecture review before implementation.
 
 ### Instruction loading rules
 
-1. Resolve all task-specific paths relative to the directory containing this `AGENTS.md`, not the current working directory.
-2. Read the relevant instruction files before analyzing code, proposing solutions, or making changes.
-3. If a task involves both architecture and testing, load and apply both instruction files.
-4. Do not load unrelated task-specific instructions.
-5. If a required instruction file is missing or cannot be read, report this explicitly. Do not invent its contents.
-6. Treat `AGENTS.md` as the source of general project rules and task-specific files as additional specialized instructions.
-7. If instructions conflict, follow the more specific task-level rule unless it contradicts an explicit user requirement or a higher-priority instruction.
+1. Resolve all task-specific instruction paths relative to the global Codex home directory (CODEX_HOME), which defaults to ~/.codex.
+2. Never resolve task-specific instruction paths relative to the current working directory, project root, or repository root.
+3. Do not search for or load promts/test or promts/architecture from the current project, even if files with those names exist there.
+4. Read the relevant instruction files from the global Codex home directory before analyzing code, proposing solutions, or making changes.
+5. If a task involves both architecture and testing, load and apply both instruction files.
+6. Do not load unrelated task-specific instructions.
+7. If a required instruction file is missing or cannot be read, report this explicitly. Do not invent its contents or silently fall back to project-local files.
+8. Treat the global AGENTS.md as the source of general development rules and task-specific files as additional specialized instructions.
+9. If instructions conflict, follow the more specific task-level rule unless it contradicts an explicit user requirement or a higher-priority instruction.
 
 ## General rules
 
