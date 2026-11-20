@@ -68,7 +68,18 @@ For tasks involving architecture design, system design, integration design, tech
 10. Do not introduce new dependencies without explaining why they are necessary.
 11. Whenever a new file is created in the project, immediately stage it in Git using git add <file-path>. Do not stage unrelated files or changes.
 12. Prioritize human readability, clarity, and ease of understanding. Write code that is straightforward to read, maintain, and review by other developers. Follow existing project conventions and avoid introducing new technologies, libraries, coding styles, patterns, or abstractions without sufficient technical justification. Prefer simple, familiar solutions over clever or unnecessarily complex ones.
-13. When implementing a feature, explicitly highlight missing information, ambiguous requirements, or important edge cases not covered by the specification. Add concise `TODO` comments in the relevant code locations when appropriate, clearly describing what needs clarification or further implementation. Report these gaps to the user. Do not silently make assumptions about business-critical behavior.
+13. Explicitly highlight issues requiring human attention by adding concise `TODO` comments at the relevant code locations:
+    - **Security vulnerabilities:** Potential security risks, insecure implementations, missing security checks, or insufficient protection of sensitive data.
+    - **Missing or conflicting requirements:** Ambiguous, incomplete, or contradictory specifications, undefined business behavior, or important edge cases not covered by the requirements.
+    - **Other concerns:** Potential reliability issues, data consistency risks, unresolved technical decisions, or anything else requiring human review or clarification.
+
+    Each `TODO` must clearly describe the specific issue, its potential impact, and the action or decision required. Do not add generic or redundant `TODO` comments.
+
+    Report all identified issues to the user in the final response. Do not silently make assumptions about business-critical behavior or introduce speculative fixes without approval.
+
+    Do not use `TODO` comments as a substitute for fixing issues that can be safely and correctly resolved within the task scope.
+
+	Do not silently make assumptions about business-critical behavior.
 
 ## Kotlin and Spring Boot
 
@@ -79,8 +90,29 @@ For tasks involving architecture design, system design, integration design, tech
 5. Respect existing service, repository, controller, and integration boundaries.
 6. Follow existing transaction management and exception-handling patterns.
 7. Prefer existing libraries and project utilities.
-8. When a `companion object` is used in a Kotlin class, declare it at the beginning of the class body, before properties, constructors' initialization blocks, and methods.
-9. For class-level logging, use `KLogging` through the companion object: `companion object : KLogging()`. Follow this convention instead of introducing alternative logging approaches.
+8. For class-level logging, use `KLogging` through the companion object: `companion object : KLogging()`. Follow this convention instead of introducing alternative logging approaches.
+
+### Class structure and member ordering
+
+Follow a consistent class member order to improve readability and maintainability:
+
+1. Constructors.
+2. Initialization blocks (`init` in Kotlin, initializer blocks in Java).
+3. For Kotlin: `companion object` containing constants, logging, and class-level members. For Java: static fields and constants.
+4. Instance properties and fields.
+5. Public methods.
+6. Protected and internal/package-private methods.
+7. Private methods at the end of the class.
+
+Additional rules:
+
+- Keep related methods logically grouped within their visibility section.
+- In Kotlin, place the `companion object` at the beginning of the class body, after explicit secondary constructors and initialization blocks, if any.
+- Do not declare data classes inside service, controller, or other implementation classes. Define them as separate top-level classes.
+- Multiple related Kotlin data classes may be grouped in a single `.kt` file when they belong to the same domain or API contract.
+- Avoid combining unrelated data classes in one file.
+- Preserve existing project conventions unless restructuring is explicitly requested.
+
 
 ## Financial systems and reliability
 
@@ -103,9 +135,12 @@ Focus on risks relevant to the task rather than adding unnecessary complexity.
 3. Identify ambiguities and missing information.
 4. For nontrivial changes, briefly describe the implementation approach.
 5. Implement the smallest correct change consistent with the existing architecture.
-6. Add or update relevant tests.
-7. Run relevant tests when the environment permits.
-8. Report changes, test results, and unresolved issues.
+6. After completing the initial implementation, present the changes to the user for review and explicitly wait for human approval before writing or modifying tests.
+7. Do not create, update, or refactor tests during implementation iterations unless explicitly requested by the user.
+8. Once the implementation is approved, add or update relevant tests following the task-specific testing instructions.
+9. Run relevant tests when the environment permits.
+10. Report changes, test results, and unresolved issues.
+11. To minimize unnecessary token consumption and rework, separate implementation and testing into two distinct phases. Do not assume that completing the implementation constitutes approval. Explicit human confirmation is required before proceeding to the testing phase.
 
 Do not claim tests passed unless they were actually executed successfully.
 
