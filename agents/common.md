@@ -49,6 +49,9 @@
 - Provide actionable and unambiguous results.
 - Explicitly report incomplete work, blockers, and unresolved issues.
 - Do not claim successful completion without verification.
+- Save output artifacts to the directory defined in the agent specification, relative to the ai-models repository root.
+- Create the output directory if it does not exist.
+- Do not overwrite existing artifacts without explicit approval.
 
 ## Safety and Permissions
 

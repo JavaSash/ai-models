@@ -43,6 +43,9 @@ output:
   # Path to the output validation schema, if applicable.
   schema: null
 
+  # Output directory relative to the ai-models repository root.
+  directory: null
+
   # Naming convention for the output artifact file.
   filename_pattern: null
 

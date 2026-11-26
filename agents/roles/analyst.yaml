@@ -26,6 +26,7 @@ permissions:
   - read_task_context
   - read_project_instructions
   - make_low_risk_assumptions
+  - create_task_artifacts
 
 restrictions:
   - do not modify source code
@@ -51,6 +52,7 @@ output:
   format: yaml
   template: agents/templates/task-specification.yaml
   schema: null
+  directory: agents/tasks/to_impl/
   filename_pattern: "task_<short_description>.yaml"
 
 completion_criteria:
@@ -67,4 +69,7 @@ completion_criteria:
   - artifact filename follows the defined naming pattern
   - short_description consists of 2-3 English words describing the task objective in lowercase snake_case
   - existing correct functionality is not included in the implementation scope
+  - artifact is saved to the specified output directory
+
+
 

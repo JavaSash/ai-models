@@ -1,0 +1,35 @@
+# Artifact format version.
+version: "1.0"
+
+# Target publication channel.
+channel: ""
+
+# DEV_DIARY | PERSONAL_FINANCE | TECH | AI
+category: ""
+
+# S | M | L
+size: ""
+
+# DRAFT | APPROVED | PUBLISHED | REJECTED
+status: "DRAFT"
+
+# Post title.
+title: ""
+
+# Publication-ready post content.
+content: ""
+
+# Relevant publication hashtags.
+hashtags: []
+
+# Sources supporting factual claims.
+sources: []
+
+# Related development tasks or releases.
+related_tasks: []
+
+# Optional suggestions for accompanying visual content.
+visual_suggestions: []
+
+# Issues requiring human attention before publication.
+review_notes: []
