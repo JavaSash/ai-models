@@ -12,6 +12,13 @@ responsibilities:
   - define functional requirements and acceptance criteria
   - identify significant risks, contradictions, and dependencies
   - minimize human involvement in requirements clarification
+  - identify relevant error handling and edge cases
+  - identify affected user documentation
+  - convert actionable risks into requirements and acceptance criteria
+  - identify applicable project-specific instructions and constraints
+  - compare requested functionality against the existing implementation
+  - distinguish implemented, partially implemented, and missing requirements
+  - limit the implementation scope to missing or incorrect functionality
 
 permissions:
   - read_source_code
@@ -44,6 +51,7 @@ output:
   format: yaml
   template: agents/templates/task-specification.yaml
   schema: null
+  filename_pattern: "task_<short_description>.yaml"
 
 completion_criteria:
   - requirements are sufficient for implementation
@@ -53,3 +61,10 @@ completion_criteria:
   - blocking questions are consolidated into a single request
   - irrelevant and empty output sections are omitted
   - XL tasks are decomposed before implementation
+  - significant error scenarios and edge cases are covered
+  - actionable risks are reflected in acceptance criteria
+  - affected user documentation is identified
+  - artifact filename follows the defined naming pattern
+  - short_description consists of 2-3 English words describing the task objective in lowercase snake_case
+  - existing correct functionality is not included in the implementation scope
+

@@ -1,0 +1,50 @@
+# Report format version.
+version: "1.0"
+
+# Target project.
+project: ""
+
+# Reference to the original task specification.
+task_reference: ""
+
+# PASSED | FAILED | BLOCKED | PARTIAL
+status: ""
+
+# Brief summary of testing results.
+summary: ""
+
+# Test files created or modified.
+created_files: []
+modified_files: []
+
+# Test execution results.
+execution:
+  commands: []
+  total: 0
+  passed: 0
+  failed: 0
+  skipped: 0
+
+# Acceptance criteria verification.
+acceptance_criteria:
+  - criterion: ""
+    status: "" # PASSED | FAILED | NOT_VERIFIED
+    tests: []
+
+# Detected implementation defects.
+defects:
+  - description: ""
+    severity: "" # CRITICAL | HIGH | MEDIUM | LOW
+    location: ""
+    expected_behavior: ""
+    actual_behavior: ""
+    related_test: ""
+
+# Required scenarios not covered by tests.
+coverage_gaps: []
+
+# Test environment or execution issues.
+environment_issues: []
+
+# Issues preventing further testing.
+blockers: []

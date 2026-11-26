@@ -13,7 +13,7 @@ task_objective: ""
 # S | M | L | XL
 complexity: ""
 
-# READY | BLOCKED | DECOMPOSITION_REQUIRED
+# READY | BLOCKED | DECOMPOSITION_REQUIRED | ALREADY_IMPLEMENTED
 status: ""
 
 # Relevant existing functionality.

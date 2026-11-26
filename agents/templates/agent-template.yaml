@@ -43,6 +43,9 @@ output:
   # Path to the output validation schema, if applicable.
   schema: null
 
+  # Naming convention for the output artifact file.
+  filename_pattern: null
+
 # Conditions that must be satisfied to consider the task complete.
 completion_criteria:
   - ""

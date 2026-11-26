@@ -5,15 +5,18 @@ classification:
   # Small, localized change.
   S:
     criteria:
-      - localized change within existing functionality
-      - no architecture or data model changes
+      - small and well-defined implementation scope
+      - minor extensions of existing functionality
+      - substantial reuse of existing components
+      - no significant architecture or data model changes
       - low implementation risk
 
   # Medium, standalone feature.
   M:
     criteria:
-      - new functionality within existing architecture
-      - changes across multiple components
+      - substantial new functionality
+      - non-trivial business logic changes
+      - significant coordination across components
       - moderate implementation risk
 
   # Large, complex feature.
@@ -22,6 +25,10 @@ classification:
       - significant architecture or data model changes
       - complex cross-service interactions
       - high implementation or business risk
+      - substantial implementation scope regardless of
+        individual component complexity
+      - significant infrastructure or testing framework changes
+      - extensive coordination across multiple scenarios
 
   # Task exceeding the acceptable complexity.
   XL:
@@ -38,3 +45,12 @@ rules:
   - avoid overestimating task complexity
   - respect explicit human classification
   - decompose XL tasks into S, M, or L tasks
+  - consider the degree of reuse of existing functionality
+  - minor backward-compatible API extensions do not
+    automatically increase task complexity
+  - changes across multiple components alone are not sufficient to classify a task as M
+  - evaluate implementation scope independently
+    of technical complexity
+  - substantial reuse does not reduce complexity when the overall implementation scope remains large
+  - consider infrastructure, integration, and testing effort when relevant to the task
+
