@@ -16,7 +16,7 @@ Load the applicable task-specific instructions from the absolute project paths b
 
 For tasks involving writing, modifying, reviewing, or debugging tests:
 
-1. Read `D:\IdeaProjects\ai-models\promts\test\AGENTS.md` before starting the task.
+1. Read `D:\IdeaProjects\ai-models\agent\roles\tester.md` before starting the task.
 2. Apply the instructions from this file together with the general rules in AGENTS.md.
 3. Follow the testing conventions, mocking rules, assertion patterns, and code style defined in the testing instructions.
 4. Apply these instructions to unit, integration, and controller tests whenever relevant.
@@ -25,7 +25,7 @@ For tasks involving writing, modifying, reviewing, or debugging tests:
 
 For tasks involving architecture design, system design, integration design, technical research, or evaluation of implementation approaches:
 
-1. Read `D:\IdeaProjects\ai-models\promts\architecture\AGENTS.md` before starting the analysis.
+1. Read `D:\IdeaProjects\ai-models\agent\roles\architect.md` before starting the analysis.
 2. Apply the instructions from this file together with the general rules in AGENTS.md.
 3. Follow its requirements for architectural analysis, alternative solutions, trade-offs, risks, and recommendations.
 4. Do not start implementation until the architectural analysis is complete when the task explicitly requires architecture review before implementation.

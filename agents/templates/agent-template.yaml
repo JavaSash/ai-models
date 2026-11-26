@@ -1,0 +1,51 @@
+# Unique agent identifier.
+name: ""
+
+# Agent specification version.
+version: "1.0"
+
+# Brief description of the agent's role and purpose.
+role: ""
+
+# Tasks and responsibilities assigned to the agent.
+responsibilities:
+  - ""
+
+# Actions and operations the agent is allowed to perform.
+permissions:
+  - ""
+
+# Prohibited actions and role-specific limitations.
+restrictions:
+  - ""
+
+# Input data required to execute the task.
+input:
+  # Mandatory input parameters.
+  required:
+    - ""
+
+  # Additional input parameters, if available.
+  optional:
+    - ""
+
+# Expected result of the agent's work.
+output:
+  # Type of artifact produced by the agent.
+  artifact: ""
+
+  # Output format: YAML, JSON, Markdown, plain text, etc.
+  format: ""
+
+  # Path to the artifact template, if applicable.
+  template: null
+
+  # Path to the output validation schema, if applicable.
+  schema: null
+
+  # Optional sections defining the artifact structure.
+  sections: []
+
+# Conditions that must be satisfied to consider the task complete.
+completion_criteria:
+  - ""
