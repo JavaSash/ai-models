@@ -1,0 +1,40 @@
+# Task complexity classification policy.
+version: "1.0"
+
+classification:
+  # Small, localized change.
+  S:
+    criteria:
+      - localized change within existing functionality
+      - no architecture or data model changes
+      - low implementation risk
+
+  # Medium, standalone feature.
+  M:
+    criteria:
+      - new functionality within existing architecture
+      - changes across multiple components
+      - moderate implementation risk
+
+  # Large, complex feature.
+  L:
+    criteria:
+      - significant architecture or data model changes
+      - complex cross-service interactions
+      - high implementation or business risk
+
+  # Task exceeding the acceptable complexity.
+  XL:
+    criteria:
+      - multiple independent large features
+      - excessive implementation scope
+      - cannot be reliably implemented as a single task
+    decomposition_required: true
+
+rules:
+  - evaluate scope, complexity, and risk
+  - classify by the highest applicable complexity level
+  - do not classify solely by the number of changed files
+  - avoid overestimating task complexity
+  - respect explicit human classification
+  - decompose XL tasks into S, M, or L tasks

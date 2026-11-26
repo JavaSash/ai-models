@@ -1,0 +1,41 @@
+# Specification format version.
+version: "1.0"
+
+# Target project.
+project: ""
+
+# Short task title.
+title: ""
+
+# Expected business outcome.
+task_objective: ""
+
+# S | M | L | XL
+complexity: ""
+
+# READY | BLOCKED | DECOMPOSITION_REQUIRED
+status: ""
+
+# Relevant existing functionality.
+current_implementation: ""
+
+# Expected functional behavior.
+functional_requirements: []
+
+# Verifiable conditions for task acceptance.
+acceptance_criteria: []
+
+# Technical and business constraints.
+constraints: []
+
+# Low-risk assumptions made by the analyst.
+assumptions: []
+
+# Significant identified risks.
+risks: []
+
+# Issues requiring human clarification.
+blockers: []
+
+# Decomposed tasks for XL specifications.
+subtasks: []

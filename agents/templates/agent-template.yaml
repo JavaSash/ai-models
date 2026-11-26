@@ -43,9 +43,6 @@ output:
   # Path to the output validation schema, if applicable.
   schema: null
 
-  # Optional sections defining the artifact structure.
-  sections: []
-
 # Conditions that must be satisfied to consider the task complete.
 completion_criteria:
   - ""

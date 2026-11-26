@@ -1,0 +1,1 @@
+TODO add link to this file on .\codex dir AGENTS.md
